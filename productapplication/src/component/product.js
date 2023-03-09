@@ -21,11 +21,7 @@ function Product() {
 
 
 
-    // localStorage.setItem("products",JSON.stringify([ 
-    //     {id: 1, name: ""}, {id: 2, name: "sfsdsdfsdfadas"}, {id: 3, name: "sdsd"}]))
-
-
-//   products[2].name = "sdfs"
+     
 
 const addProduct = ()=>{
     if(id){
@@ -44,10 +40,13 @@ const addProduct = ()=>{
   return (
     <div>
         <h1>PRODUCT APPLICATION</h1>
+        
+
+        
         <form>
             <input type="text" onChange={(event)=>{setPrductName(event.target.value);console.log(event.target.value)}} value={productName} />
         </form>
-        <button onClick={()=>{addProduct()
+        <button style={{marginBottom:"30px"}} onClick={()=>{addProduct()
             // setPrductName("");setProducts([...products,{id:products.length+1 ,name:productName}])
         }
             }>{id ?"update":"add"}</button>
@@ -55,7 +54,7 @@ const addProduct = ()=>{
                  {
             productMap && products.length > 0 && products.map((item,index)=>(
 
-                <div key={index}>{item.name}{index} <button onClick={()=>{
+                <div key={index}>{item.name}<button onClick={()=>{
                   setId(item.id);
                     setIndex(index)
                      setPrductName(item.name)}}
